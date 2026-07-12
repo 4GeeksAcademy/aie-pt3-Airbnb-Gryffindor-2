@@ -1,4 +1,4 @@
-export interface Listing {
+export interface Accommodation {
   id: string;
   title: string;
   price: number;
@@ -12,6 +12,9 @@ export interface Listing {
     lat: number;
     lng: number;
   };
+}
+
+export interface Room extends Accommodation {
   guests: number;
   beds: number;
   baths: number;
@@ -20,3 +23,5 @@ export interface Listing {
   amenities: string[];
   images: string[];
 }
+
+export type Listing = Room;

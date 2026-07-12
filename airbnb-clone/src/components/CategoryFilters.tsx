@@ -4,7 +4,11 @@ interface CategoryFiltersProps {
   onSelect: (category: string) => void;
 }
 
-export function CategoryFilters({ categories, activeCategory, onSelect }: CategoryFiltersProps) {
+export const CategoryFilters = ({
+  categories,
+  activeCategory,
+  onSelect,
+}: CategoryFiltersProps) => {
   return (
     <div className="flex gap-3 overflow-x-auto pb-2">
       {categories.map((category) => {
@@ -25,4 +29,4 @@ export function CategoryFilters({ categories, activeCategory, onSelect }: Catego
       })}
     </div>
   );
-}
+};

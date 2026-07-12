@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import type { Listing } from '@/types/listings';
+import type { Accommodation } from '@/types/listings';
 
 interface ListingCardProps {
-  listing: Listing;
+  listing: Accommodation;
 }
 
-export function ListingCard({ listing }: ListingCardProps) {
+export const ListingCard = ({ listing }: ListingCardProps) => {
   return (
     <Link
       href={`/rooms/${listing.id}`}
@@ -28,4 +28,4 @@ export function ListingCard({ listing }: ListingCardProps) {
       </div>
     </Link>
   );
-}
+};

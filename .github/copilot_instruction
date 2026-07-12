@@ -82,3 +82,19 @@ Tu trabajo debe priorizar la experiencia de usuario, la calidad del código, la 
 
 ## Instrucción final
 Ejecuta el desarrollo como si fuera una implementación real de un producto frontend profesional. Prioriza la experiencia del usuario, la calidad visual, la arquitectura limpia y la navegación fluida entre vistas.
+
+## Acceptance criteria
+- Existe un archivo context.md en la raíz con una descripción clara de la interfaz, sus componentes y su usuario.
+- El proyecto fue configurado con Next.js 16, TypeScript, Tailwind CSS y el App Router, sin usar plantilla de inicio.
+- Tres rutas están implementadas y son navegables: /, /catalog y /rooms/[id].
+- Toda la navegación interna usa Link y no provoca recargas completas de página entre vistas.
+- El diseño es mobile-first y el viewport de 375px debe estar correcto antes de aplicar breakpoints de escritorio.
+- El componente de tarjeta de alojamiento se reutiliza en la Home y en el Catálogo.
+- useState se usa en al menos tres casos distintos: filtrado por búsqueda, categoría activa, orden de resultados, contador de huéspedes o índice de la galería de fotos.
+- useEffect se usa para simular la carga de datos al montar el componente en al menos dos páginas, con un estado de carga visible mientras los datos no están disponibles.
+- La página de detalle incluye las cinco secciones: galería con navegación, cabecera del alojamiento, info del anfitrión, amenities y tarjeta de reserva.
+- Los componentes están divididos en archivos individuales, cada uno con una única responsabilidad.
+- No se permiten componentes de clase: todos los componentes son funcionales y están definidos con const.
+- Se definen tipos o interfaces de TypeScript para las estructuras de datos principales, incluyendo alojamiento y habitación.
+- Las clases de utilidad de Tailwind se usan para todos los estilos y no se usan objetos style={{}} en línea.
+- El flujo de visión a especificación es visible: las especificaciones derivadas de las capturas están documentadas en context.md o en comentarios del código.

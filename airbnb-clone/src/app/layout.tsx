@@ -17,14 +17,16 @@ export const metadata: Metadata = {
   description: 'A polished Airbnb-inspired frontend built with Next.js and Tailwind CSS',
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full bg-gray-50 text-gray-900">{children}</body>
     </html>
   );
-}
+};
+
+export default RootLayout;

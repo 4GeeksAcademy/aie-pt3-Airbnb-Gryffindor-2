@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { mockListings } from '@/data/mockData';
-import type { Listing } from '@/types/listings';
+import type { Room } from '@/types/listings';
 
-export default function RoomDetailPage() {
+const RoomDetailPage = () => {
   const params = useParams();
   const roomId = params.id as string;
-  const [listing, setListing] = useState<Listing | null>(null);
+  const [listing, setListing] = useState<Room | null>(null);
   const [loading, setLoading] = useState(true);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [guests, setGuests] = useState(2);
@@ -25,8 +25,14 @@ export default function RoomDetailPage() {
   }, [roomId]);
 
   const photoCount = listing?.images.length ?? 0;
-  const nextPhoto = () => setPhotoIndex((current) => (current + 1) % photoCount);
-  const prevPhoto = () => setPhotoIndex((current) => (current - 1 + photoCount) % photoCount);
+  const nextPhoto = () => {
+    if (!photoCount) return;
+    setPhotoIndex((current) => (current + 1) % photoCount);
+  };
+  const prevPhoto = () => {
+    if (!photoCount) return;
+    setPhotoIndex((current) => (current - 1 + photoCount) % photoCount);
+  };
 
   const totalPrice = useMemo(() => {
     if (!listing) return 0;
@@ -140,4 +146,6 @@ export default function RoomDetailPage() {
       </main>
     </div>
   );
-}
+};
+
+export default RoomDetailPage;

@@ -1,12 +1,13 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { CategoryFilters } from '@/components/CategoryFilters';
 import { ListingCard } from '@/components/ListingCard';
 import { mockListings } from '@/data/mockData';
 
-export default function HomePage() {
+const HomePage = () => {
   const categories = ['Todos', 'Playa', 'Mansiones', 'Tendencias', 'Cabañas', 'Diseño'];
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('Todos');
@@ -45,7 +46,19 @@ export default function HomePage() {
               <p className="text-sm font-medium text-rose-500">Descubre lugares únicos</p>
               <h1 className="text-2xl font-semibold sm:text-3xl">Encuentra el alojamiento perfecto</h1>
             </div>
+            <Link
+              href="/catalog"
+              className="hidden rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-800 sm:inline-flex"
+            >
+              Explorar catálogo
+            </Link>
           </div>
+          <Link
+            href="/catalog"
+            className="mb-4 inline-flex rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-800 sm:hidden"
+          >
+            Explorar catálogo
+          </Link>
           <CategoryFilters
             categories={categories}
             activeCategory={activeCategory}
@@ -69,4 +82,6 @@ export default function HomePage() {
       </main>
     </div>
   );
-}
+};
+
+export default HomePage;
