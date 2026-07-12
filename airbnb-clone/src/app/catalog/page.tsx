@@ -6,7 +6,7 @@ import { Navbar } from '@/components/Navbar';
 import { ListingCard } from '@/components/ListingCard';
 import { mockListings } from '@/data/mockData';
 
-export default function CatalogPage() {
+const CatalogPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
@@ -69,4 +69,6 @@ export default function CatalogPage() {
       </main>
     </div>
   );
-}
+};
+
+export default CatalogPage;
